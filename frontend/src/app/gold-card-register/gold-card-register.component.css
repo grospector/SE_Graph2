@@ -1,0 +1,19 @@
+mat-card {
+  max-width: 500px;
+  margin: 2em auto;
+  margin-top : 0px;
+  padding-left : 50px;
+}
+.signin-content {
+  padding: 60px 1rem;
+}
+.full-width-input {
+  width: 100%
+}
+
+.center{
+  text-align : center;
+}
+.tab{
+  margin-left : 30px;
+}

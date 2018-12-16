@@ -1,0 +1,64 @@
+<mat-card>
+<p class = "center">CurrentDate : </p>
+<br>
+<mat-form-field>
+  <mat-select placeholder="Province" [formControl]="animalControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let animal of animals" [value]="animal">
+      {{animal.name}}
+    </mat-option>
+  </mat-select>
+
+  <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+  <mat-hint>{{animalControl.value?.sound}}</mat-hint>
+</mat-form-field>
+<br>
+<mat-form-field>
+  <mat-select placeholder="ชนิดดัญญา" [formControl]="animalControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let animal of animals" [value]="animal">
+      {{animal.name}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+  <mat-hint>{{animalControl.value?.sound}}</mat-hint>
+</mat-form-field>
+<br>
+<mat-form-field>
+  <mat-select placeholder="Hostpital" [formControl]="animalControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let animal of animals" [value]="animal">
+      {{animal.name}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+  <mat-hint>{{animalControl.value?.sound}}</mat-hint>
+</mat-form-field>
+
+<br>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+</mat-form-field>
+<br>
+  <mat-form-field class="example-full-width">
+    <input matInput type="username" placeholder="username">
+  </mat-form-field>
+
+  <mat-form-field class="tab">
+    <input matInput type="password" placeholder="Password">
+  </mat-form-field>
+<br>
+  <mat-form-field class="example-full-width">
+    <input matInput type="firstname" placeholder="firstname">
+  </mat-form-field>
+
+  <mat-form-field class="tab">
+    <input matInput type="surname" placeholder="surname">
+  </mat-form-field>
+<br>
+
+<sheet></sheet>
+
+</mat-card>
