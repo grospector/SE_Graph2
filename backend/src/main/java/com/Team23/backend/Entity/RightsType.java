@@ -21,15 +21,15 @@ import java.util.*;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode
-@Table(name="Hostpital") //ชื่อตาราง
-public class Hostpital {
+@Table(name="RightsType") //ชื่อตาราง
+public class RightsType {
     @Id  //  Annotations  @Id  บอกว่าเป็น  Primary  key
-    @SequenceGenerator(name="hostpital_seq",sequenceName="hostpital_seq")
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="hostpital_seq")   // Annotations Generate id เอง ตอน insert
-    @Column(name="HOSTPITAL_ID",unique = true, nullable = false)
-    private @NonNull Long hostpitalId;
+    @SequenceGenerator(name="rightstype_seq",sequenceName="rightstype_seq")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="rightstype_seq")   // Annotations Generate id เอง ตอน insert
+    @Column(name="RIGHTSTYPE_ID",unique = true, nullable = false)
+    private @NonNull Long rightsTypeId;
 
-    private @NonNull String hostpitalName;
+    private @NonNull String rightsTypeName;
 
 
 }

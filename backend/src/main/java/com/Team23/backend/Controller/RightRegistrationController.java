@@ -12,17 +12,17 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-public class ProvinceController {
+public class RightRegistrationController {
     @Autowired
-    private final ProvinceRepository provinceRepository;
+    private final RightRegistrationRepository rightRegistrationRepository;
 
-    public ProvinceController(ProvinceRepository provinceRepository) {
-        this.provinceRepository = provinceRepository;
+    public RightRegistrationController(RightRegistrationRepository rightRegistrationRepository) {
+        this.rightRegistrationRepository = rightRegistrationRepository;
     }
 
-    @GetMapping("/Province")
-    public Collection<Province> Province() {
-        return provinceRepository.findAll().stream().collect(Collectors.toList());
+    @GetMapping("/RightRegistration.java")
+    public Collection<RightRegistration> RightRegistration() {
+        return rightRegistrationRepository.findAll().stream().collect(Collectors.toList());
     }
 
 }

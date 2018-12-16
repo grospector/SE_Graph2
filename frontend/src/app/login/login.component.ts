@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from './../auth/auth.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,11 @@ export class LoginComponent implements OnInit {
   form: FormGroup;                    // {1}
   private formSubmitAttempt: boolean; // {2}
 
+  navLinks = [
+     {path: 'goldcardregister', label: 'GoldCardRegister'},
+   ];
+
+  isLoggedIn$: Observable<boolean>;
   constructor(
     private fb: FormBuilder,         // {3}
     private authService: AuthService // {4}
@@ -21,6 +27,8 @@ export class LoginComponent implements OnInit {
       userName: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+     this.isLoggedIn$ = this.authService.isLoggedIn
   }
 
   isFieldInvalid(field: string) { // {6}

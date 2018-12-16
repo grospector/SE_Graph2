@@ -1,5 +1,12 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
+.font1{
+  font-family: 'Tangerine', serif;
+   font-size: 50px;
+   text-shadow: 4px 4px 4px #aaa;
+   margin : 10px;
+ }
+
 body {
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
@@ -9,7 +16,51 @@ body {
   padding: 30px;
 }
 
+.card{
+border-radius: 5px;
+  max-width: 500px;
+  margin: 2em auto;
+  margin-top : 0px;
+  padding-top : 10px;
+  padding : 10px 50px 50px 50px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+/*
+.card:hover{
+  max-width: 500px;
+  margin: 2em auto;
+  margin-top : 0px;
+  padding-top : 10px;
+  padding : 10px 50px 50px 50px;
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}*/
+
+.cardlog{
+  text-align:center;
+  margin : 500;
+  height: 100px;
+  width: 300px;
+  border-radius: 2px;
+  margin-bottom : 0px;
+  padding-top : 10px;
+  padding : 10px 50px 20px 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  color: #000;
+}
+
+.mat-focused .placeholder {
+    color: #00D318;
+}
+md-input-container label {
+  color: red;
+}
+md-input-container.md-input-focused label {
+  color: blue;
+}
+mat-focused .mat-form-field-label{ color: #ee6e73; } .mat-focused .mat-form-field-underline .mat-form-field-ripple{ background: #ee6e73; }
+
 .version-info {
   font-size: 8pt;
   float: right;
 }
+

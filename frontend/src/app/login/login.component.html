@@ -1,9 +1,8 @@
 
-<div class="signin-content">
-  <mat-card>
+  <mat-card style="padding-left:40px;padding-right:40px">
     <mat-card-content>
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <p>Please login to continue</p>
+        <p class="font1">Please login to continue</p>
         <mat-form-field class="full-width-input">
           <input matInput placeholder="User" formControlName="userName" required>
           <mat-error *ngIf="isFieldInvalid('userName')">
@@ -16,8 +15,10 @@
             Please inform your password
           </mat-error>
         </mat-form-field>
+        <!-- -->
+        <button mat-menu-item routerLink="goldcardregister" *ngIf="isLoggedIn;" >Register(GoldCard)</button>
         <button mat-raised-button color="primary">Login</button>
+
       </form>
     </mat-card-content>
   </mat-card>
-</div>

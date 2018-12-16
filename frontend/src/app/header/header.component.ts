@@ -14,11 +14,12 @@ navLinks = [
    ];
 
   isLoggedIn$: Observable<boolean>;                  // {1}
-
+check: String;
     constructor(private authService: AuthService) { }
 
     ngOnInit() {
       this.isLoggedIn$ = this.authService.isLoggedIn; // {2}
+
     }
 
     onLogout(){

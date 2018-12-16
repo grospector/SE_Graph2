@@ -1,8 +1,8 @@
 
 <mat-toolbar color="primary"
-             *ngIf="isLoggedIn$ | async as isLoggedIn"
->
-  <!-- -->
+ *ngIf="isLoggedIn$ | async as isLoggedIn"
+             style="height:40px;padding:5px">
+
   <span>
   <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
 
@@ -54,7 +54,7 @@
   </span>
   <!-- -->
   <span>
-  <button mat-button routerLink="goldcardregister" *ngIf="isLoggedIn;">GoldCard</button>
+
   </span>
   <!-- -->
   <span class="example-spacer"></span>
@@ -91,6 +91,8 @@
         <mat-icon>notifications_off</mat-icon>
         <span>Disable alerts</span>
       </button>
+      <button mat-menu-item routerLink="goldcardregister" *ngIf="isLoggedIn;" >Register(GoldCard)</button>
+      <button mat-menu-item (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
     </mat-menu>
 
     </span>
@@ -107,5 +109,4 @@
     <button mat-button (click)="onLogout()">Logout</button>
   </ng-template>
    -->
-  <button mat-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
 </mat-toolbar>
