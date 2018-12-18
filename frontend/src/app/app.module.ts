@@ -54,6 +54,7 @@ import {
 import { SheetComponent,Opensheet } from './sheet/sheet.component';
 import { GoldcardService } from './goldcard.service';
 import { HttpClientModule } from '@angular/common/http';
+import { platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -107,10 +108,13 @@ import { HttpClientModule } from '@angular/common/http';
         MatTreeModule,
         ReactiveFormsModule,
         HttpClientModule,
-            MatNativeDateModule
+            MatNativeDateModule,
+            FormsModule
   ],
   providers: [AuthService, AuthGuard,Opensheet,GoldcardService],
   entryComponents: [SheetComponent,Opensheet],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

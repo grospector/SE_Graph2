@@ -17,9 +17,9 @@ import java.util.stream.Collectors;
 import java.time.format.DateTimeFormatter;
 import java.time.*;
 
-
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+
 public class RightRegistrationController {
     @Autowired private final RightRegistrationRepository rightRegistrationRepository;
     @Autowired private HostpitalRepository hostpitalRepository;
@@ -33,6 +33,7 @@ public class RightRegistrationController {
         this.provinceRepository = provinceRepository;
 
     }
+
 
     @GetMapping("/Rightregistration")
     public Collection<RightRegistration> RightRegistration() {

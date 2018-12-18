@@ -1,64 +1,80 @@
+
 <div class="card">
 <p class = "center">วันที่สมัคร : {{CurrentDate | date:'fullDate' }}</p>
-<br>
-<mat-form-field>
-  <mat-select placeholder="Province" [formControl]="animalControl" required>
-    <mat-option>--</mat-option>
-    <mat-option *ngFor="let animal of animals" [value]="animal">
-      {{animal.name}}
-    </mat-option>
-  </mat-select>
 
-  <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
-  <mat-hint>{{animalControl.value?.sound}}</mat-hint>
-</mat-form-field>
-<br>
+  <br>
+
+  <mat-form-field >
+    <input matInput  placeholder="Username"  [(ngModel)]="input.username">
+  </mat-form-field>
+
+  <mat-form-field class="tab">
+    <input matInput  placeholder="Password"  [(ngModel)]="input.password">
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field >
+    <input matInput placeholder="Firstname"  [(ngModel)]="input.firstname">
+  </mat-form-field>
+
+  <mat-form-field class="tab">
+    <input matInput  placeholder="Surname"  [(ngModel)]="input.surname">
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <mat-select placeholder="Province" [(ngModel)]="select.provincename">
+      <mat-option *ngFor="let province of provinces" [value]="province.provinceName">
+        {{province.provinceName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
 <mat-form-field>
-  <mat-select placeholder="ชนิดดัญญา" [formControl]="animalControl" required>
-    <mat-option>--</mat-option>
-    <mat-option *ngFor="let animal of animals" [value]="animal">
-      {{animal.name}}
+  <mat-select placeholder="ชนิดสัญญา" [(ngModel)]="select.rightstypename">
+    <mat-option *ngFor="let rightstype of rightstypes" [value]="rightstype.rightsTypeName">
+      {{rightstype.rightsTypeName}}
     </mat-option>
   </mat-select>
-  <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
-  <mat-hint>{{animalControl.value?.sound}}</mat-hint>
-</mat-form-field>
-<br>
-<mat-form-field>
-  <mat-select placeholder="Hostpital" [formControl]="animalControl" required>
-    <mat-option>--</mat-option>
-    <mat-option *ngFor="let animal of animals" [value]="animal">
-      {{animal.name}}
-    </mat-option>
-  </mat-select>
-  <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
-  <mat-hint>{{animalControl.value?.sound}}</mat-hint>
 </mat-form-field>
 
 <br>
+
 <mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="เลือกวันเกิด">
+  <mat-select placeholder="Hostpital" [(ngModel)]="select.hostpitalname">
+    <mat-option *ngFor="let hostpital of hostpitals" [value]="hostpital.hostpitalName">
+      {{hostpital.hostpitalName}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="เลือกวันเกิด" [(ngModel)]="input.birthday">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
 </mat-form-field>
-<br>
-  <mat-form-field class="example-full-width">
-    <input matInput type="username" placeholder="username">
+
+  <br>
+
+  <mat-form-field appearance="legacy" [floatLabel]="lock.value.floatLabel">
+    <mat-label>บัตรปชช*</mat-label>
+    <input matInput placeholder="" [(ngModel)]="input.personalcard">
   </mat-form-field>
 
-  <mat-form-field class="tab">
-    <input matInput type="password" placeholder="Password">
-  </mat-form-field>
-<br>
-  <mat-form-field class="example-full-width">
-    <input matInput type="firstname" placeholder="firstname">
+  <br>
+
+  <mat-form-field appearance="legacy" [floatLabel]="lock.value.floatLabel">
+    <mat-label>Phone*</mat-label>
+    <input matInput placeholder="" [(ngModel)]="input.tel">
+
   </mat-form-field>
 
-  <mat-form-field class="tab">
-    <input matInput type="surname" placeholder="surname">
-  </mat-form-field>
-<br>
-
-<sheet></sheet>
+  <button mat-raised-button (click)="regis()" color="primary" >Register</button>
 
 </div>

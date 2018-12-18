@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+
 public class RightsTypeController {
     @Autowired
     private final RightsTypeRepository rightsTypeRepository;

@@ -23,10 +23,10 @@ isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | nu
 })
 export class GoldCardRegisterComponent implements OnInit {
 
-  province : Array<any>;
-  rightstype : Array<any>;
-  hostpital : Array<any>;
-  rightregistration : Array<any>;
+  provinces : Array<any>;
+  rightstypes : Array<any>;
+  hostpitals : Array<any>;
+  rightregistrations : Array<any>;
   input: any = {
       username: '',
       password: '',
@@ -48,6 +48,7 @@ export class GoldCardRegisterComponent implements OnInit {
   pipe = new DatePipe('en-US');
   matcher = new MyErrorStateMatcher();
   lock: FormGroup;
+  myControl = new FormControl();
 
   constructor(fb: FormBuilder,private goldcardService: GoldcardService, private httpClient: HttpClient){
        this.lock = fb.group({
@@ -57,7 +58,7 @@ export class GoldCardRegisterComponent implements OnInit {
   }
   regis(){
   // http://localhost:8080/Rightregistration/{username}/{password}/{firstname}/{surname}/{tel}/{personal}/{dateregis}/{birthdate}/{provincename}/{rightstypename}/{hostpitalname}
-              this.httpClient.post('http://localhost:8080/Rightregistration/'+ this.input.username+ '/' + this.input.password+'/'+this.input.firstname+'/'+this.input.tel+'/'+this.input.personalcard+'/'+this.pipe.transform(this.input.dateregis,'dd:MM:yyyy')+'/'+this.pipe.transform(this.input.birthday,'dd:MM:yyyy')+'/'+this.select.provincename+'/'+this.select.rightstypename+'/'+this.select.hostpitalname,this.input)
+              this.httpClient.post('http://localhost:8080/Rightregistration/'+ this.input.username+ '/' + this.input.password+'/'+this.input.firstname+'/'+this.input.surname+'/'+this.input.tel+'/'+this.input.personalcard+'/'+this.pipe.transform(this.CurrentDate,'dd:MM:yyyy')+'/'+this.pipe.transform(this.input.birthday,'dd:MM:yyyy')+'/'+this.select.provincename+'/'+this.select.rightstypename+'/'+this.select.hostpitalname,this.input)
                 .subscribe(
                     data => {
                         console.log('PUT Request is successful', data);
@@ -72,17 +73,21 @@ export class GoldCardRegisterComponent implements OnInit {
 
   ngOnInit() {
       this.goldcardService.getRightsType().subscribe(data =>{
-            this.rightstype = data;
-            console.log(this.rightstype);
+            this.rightstypes = data;
+            console.log(this.rightstypes);
       });
       this.goldcardService.getProvince().subscribe(data =>{
-            this.province = data;
-            console.log(this.province);
+            this.provinces = data;
+            console.log(this.provinces);
       });
       this.goldcardService.getHostpital().subscribe(data =>{
-            this.hostpital = data;
-            console.log(this.hostpital);
+            this.hostpitals = data;
+            console.log(this.hostpitals);
       });
+      this.goldcardService.getRightRegistration().subscribe(data =>{
+                  this.rightregistrations = data;
+                  console.log(this.rightregistrations);
+            });
   }
 
   passwordFormControl = new FormControl('', [
