@@ -40,11 +40,11 @@ public class RightRegistration {
     private @NonNull LocalDate birthday;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Province.class)
-    @JoinColumn(name= "province", insertable = true)
+    @JoinColumn(name= "PROVINCE_ID", insertable = true)
     private Province province;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = RightsType.class)
-    @JoinColumn(name= "rightstype", insertable = true)
+    @JoinColumn(name= "RIGHTSTYPE_ID", insertable = true)
     private RightsType rightsType;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Hostpital.class)

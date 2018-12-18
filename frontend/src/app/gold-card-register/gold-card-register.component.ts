@@ -23,6 +23,7 @@ isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | nu
 })
 export class GoldCardRegisterComponent implements OnInit {
 
+
   provinces : Array<any>;
   rightstypes : Array<any>;
   hostpitals : Array<any>;
@@ -90,6 +91,9 @@ export class GoldCardRegisterComponent implements OnInit {
             });
   }
 
+onSubmit(form: NgForm) {
+    console.log(form);
+}
   passwordFormControl = new FormControl('', [
             Validators.required,
   ]);
