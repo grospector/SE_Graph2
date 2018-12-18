@@ -42,12 +42,14 @@ public class RightRegistration {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = RightsType.class)
     @JoinColumn(name= "rightstype", insertable = true)
-    //manytoone with register
     private RightsType rightstype;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Province.class)
     @JoinColumn(name= "PROVINCE_ID", insertable = true)
-    //manytoone with register
     private Province province;
+
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Hostpital.class)
+    @JoinColumn(name= "HOSTPITAL_ID", insertable = true)
+    private Hostpital hostpital;
 
 }
