@@ -20,7 +20,7 @@ public class RightsTypeController {
         this.rightsTypeRepository = rightsTypeRepository;
     }
 
-    @GetMapping("/Position")
+    @GetMapping("/RightsType")
     public Collection<RightsType> RightsType() {
         return rightsTypeRepository.findAll().stream().collect(Collectors.toList());
     }

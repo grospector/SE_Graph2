@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { GoldCardRegisterComponent } from './gold-card-register/gold-card-register.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { HomeComponent } from './home/home.component';
@@ -52,6 +52,8 @@ import {
 
 } from '@angular/material';
 import { SheetComponent,Opensheet } from './sheet/sheet.component';
+import { GoldcardService } from './goldcard.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -104,8 +106,10 @@ import { SheetComponent,Opensheet } from './sheet/sheet.component';
         MatTooltipModule,
         MatTreeModule,
         ReactiveFormsModule,
+        HttpClientModule,
+            MatNativeDateModule
   ],
-  providers: [AuthService, AuthGuard,Opensheet],
+  providers: [AuthService, AuthGuard,Opensheet,GoldcardService],
   entryComponents: [SheetComponent,Opensheet],
   bootstrap: [AppComponent]
 })
